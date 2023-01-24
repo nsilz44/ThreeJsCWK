@@ -21,9 +21,10 @@ const seedScene = new SeedScene();
 scene.add(seedScene);
 
 // camera
-camera.position.set(-85,1,-150);
-
-camera.lookAt(new THREE.Vector3(-85,1,-90));
+camera.position.x = 0;
+camera.position.y = 50;
+camera.position.z = -200;
+camera.lookAt(new THREE.Vector3(0,0,0));
 //const controls = new FlyControls(camera, renderer.domElement);
 //controls.movementSpeed = 0.0001;
 //controls.lookSpeed = 0.00001;
@@ -48,6 +49,7 @@ const windowResizeHanlder = () => {
   renderer.setSize(innerWidth, innerHeight);
   camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
+  
 };
 windowResizeHanlder();
 window.addEventListener('resize', windowResizeHanlder);

@@ -16,7 +16,5 @@ export default class Building extends THREE.Group {
     this.add(external);   
     const roof = new Roof();
     this.add(roof)
-
-
 }   
 }

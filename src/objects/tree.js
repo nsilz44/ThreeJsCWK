@@ -5,10 +5,23 @@ import PNG from './images/bush.png'
 export default class Tree extends THREE.Group {
     constructor() {
         super();
-    const loader = new THREE.TextureLoader();
-    loader.load(PNG, texture => {
-          const material = new THREE.MeshBasicMaterial( {map: texture} );
-          const geometry = new THREE.IcosahedronGeometry(4,2);
+        const loader = new THREE.TextureLoader();
+        loader.load(PNG, texture => {
+        for( let i = 0; i < 3; i++ ) {
+        const lod1 = new THREE.LOD();
+        const lod2 = new THREE.LOD();
+        const lod3 = new THREE.LOD();
+        const lod4 = new THREE.LOD();
+        const lod5 = new THREE.LOD();
+        const lod6 = new THREE.LOD();
+        const lod7 = new THREE.LOD();
+        const lod8 = new THREE.LOD();
+        const lod9 = new THREE.LOD();
+        const lod10 = new THREE.LOD();
+        const lod11 = new THREE.LOD();
+    
+        const material = new THREE.MeshBasicMaterial( {map: texture} );
+          const geometry = new THREE.IcosahedronGeometry(4,4-i);
     const leftbush = new THREE.Mesh( geometry, material );
     const middlebush = new THREE.Mesh (geometry,material);
     const rightbush = new THREE.Mesh (geometry,material);
@@ -108,11 +121,30 @@ export default class Tree extends THREE.Group {
     const bush8 = new THREE.Mesh (bushgeometry,material);
     bush8.position.set(-5,12,-5)
     this.add(bush8)
-        })
-    
+    lod1.addLevel( bush1, i *30);
+    lod2.addLevel( bush2, i * 30 );
+    lod3.addLevel( bush3, i * 30 );
+    lod4.addLevel( bush4, i * 30 );
+    lod5.addLevel( bush5, i * 30 );
+    lod6.addLevel( bush6, i * 30 );
+    lod7.addLevel( bush7, i * 30 );
+    lod8.addLevel( bush8, i * 30 );
+    lod9.addLevel( leftbush, i * 60 );
+    lod10.addLevel( rightbush, i * 60 );
+    lod11.addLevel( middlebush, i * 60 );
+    this.add(lod1)
+    this.add(lod2)
+    this.add(lod3)
+    this.add(lod4)
+    this.add(lod5)
+    this.add(lod6)
+    this.add(lod7)
+    this.add(lod8)
+    this.add(lod9)
+    this.add(lod10)
+    this.add(lod11)
+        }
+    })
 
-    
-    
-    
     }
 }
