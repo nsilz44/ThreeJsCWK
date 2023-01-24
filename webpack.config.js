@@ -20,12 +20,13 @@ module.exports = {
         exclude: path.resolve(__dirname, './node_modules/')
       },{
         test: /\.(jpe?g|png|gif|svg|tga|glb|babylon|mtl|pcb|pcd|prwm|obj|mat|mp3|ogg)$/i,
-        use: 'file-loader',
-        exclude: path.resolve(__dirname, './node_modules/')
+        use:'file-loader',
+        exclude: path.resolve(__dirname, './node_modules/'),
       }
+
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({'title': 'three-seed project'})
+    new HtmlWebpackPlugin({'title': 'threejsCWK'})
   ]
 }

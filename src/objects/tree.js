@@ -1,12 +1,14 @@
 import * as THREE from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
+import PNG from './images/bush.png'
 
 export default class Tree extends THREE.Group {
     constructor() {
         super();
-
-    const geometry = new THREE.IcosahedronGeometry(4,2);
-    const material = new THREE.MeshBasicMaterial( {color: 0x100f00} );
+    const loader = new THREE.TextureLoader();
+    loader.load(PNG, texture => {
+          const material = new THREE.MeshBasicMaterial( {map: texture} );
+          const geometry = new THREE.IcosahedronGeometry(4,2);
     const leftbush = new THREE.Mesh( geometry, material );
     const middlebush = new THREE.Mesh (geometry,material);
     const rightbush = new THREE.Mesh (geometry,material);
@@ -106,6 +108,8 @@ export default class Tree extends THREE.Group {
     const bush8 = new THREE.Mesh (bushgeometry,material);
     bush8.position.set(-5,12,-5)
     this.add(bush8)
+        })
+    
 
     
     

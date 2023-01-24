@@ -11,6 +11,7 @@ import * as THREE from 'three';
 import SeedScene from './objects/Scene.js';
 import { FlyControls } from 'three/examples/jsm/controls/FlyControls.js'
 
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera();
 const renderer = new THREE.WebGLRenderer({antialias: true});

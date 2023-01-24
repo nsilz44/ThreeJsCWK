@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-import Land from './Land/Land.js';
-import Flower from './Flower/Flower.js';
 import BasicLights from './Lights.js';
 import Bush from './Bush.js';
 import Tree from './tree.js';
@@ -9,6 +7,7 @@ import { degToRad } from 'three/src/math/MathUtils';
 import Mountain from './mountain.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Forest from './forest.js';
+import PNG from './images/grass.png'
 
 
 export default class SeedScene extends THREE.Group {
@@ -17,19 +16,15 @@ export default class SeedScene extends THREE.Group {
 
     const lights = new BasicLights();
     this.add(lights);
-
     // make ground
     const geometry = new THREE.BoxGeometry( 300, 0.1, 300 );
     const loader = new THREE.TextureLoader();
-    loader.load('./grass.png', function(texture) {
+    loader.load(PNG, texture => {
       const material = new THREE.MeshBasicMaterial( {map: texture} );
       const ground = new THREE.Mesh( geometry, material );
       ground.position.set(0, -0.06, 0);
       this.add( ground );
     })
-    
-    
-    
     
 
     const bush1 = new Bush();
