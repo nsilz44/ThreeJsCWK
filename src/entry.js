@@ -21,10 +21,9 @@ const seedScene = new SeedScene();
 scene.add(seedScene);
 
 // camera
-camera.position.x = -200;
-camera.position.y = 50;
-camera.position.z = -200;
-camera.lookAt(new THREE.Vector3(0,0,0));
+camera.position.set(-85,1,-150);
+
+camera.lookAt(new THREE.Vector3(-85,1,-90));
 //const controls = new FlyControls(camera, renderer.domElement);
 //controls.movementSpeed = 0.0001;
 //controls.lookSpeed = 0.00001;

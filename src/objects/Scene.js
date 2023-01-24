@@ -4,10 +4,11 @@ import Bush from './Bush.js';
 import Tree from './tree.js';
 import Building from './building.js';
 import { degToRad } from 'three/src/math/MathUtils';
-import Mountain from './mountain.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Forest from './forest.js';
 import PNG from './images/grass.png'
+import Road from './road.js';
+import Statues from './statues.js';
 
 
 export default class SeedScene extends THREE.Group {
@@ -26,6 +27,8 @@ export default class SeedScene extends THREE.Group {
       this.add( ground );
     })
     
+    const road = new Road();
+    this.add(road);
 
     const bush1 = new Bush();
     bush1.position.set(50,0,0);
@@ -47,8 +50,8 @@ export default class SeedScene extends THREE.Group {
     building3.rotateY(degToRad(-180));
     this.add(building3)
   
-    const mountain = new Mountain();
-    this.add(mountain)
+    const statues = new Statues();
+    this.add(statues)
 
     const forest1 = new Forest();
     this.add(forest1);
