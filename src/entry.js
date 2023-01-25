@@ -32,8 +32,8 @@ let canJump = false;
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
 const controls = new PointerLockControls( camera, renderer.domElement );
-controls.movementSpeed = 10;
-controls.lookSpeed = 0.05;
+controls.movementSpeed = 0.1;
+controls.lookSpeed = 0.0005;
 document.addEventListener( 'click', function () {
   controls.lock();
 } );

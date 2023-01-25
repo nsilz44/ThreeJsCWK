@@ -12,6 +12,6 @@ This command will bundle the project code and start a development server at [htt
 'WASD' To move the camera up,left,back,forwards.
 
 ### Where boilerplate code comes from
-Imported the wepbackconfig and basic threejs boilerplate code in entry.js and basiclights.js from https://github.com/edwinwebb/three-seed.
+Imported the wepbackconfig and basic threejs boilerplate code in entry.js and basiclights.js from E. Webb, Three Seed, (2013), GitHub repository, https://github.com/edwinwebb/three-seed.
 
-All other js and image files are made by me.
+All other js and image files are made by me in /src/objects folder.
