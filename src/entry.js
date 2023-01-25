@@ -4,7 +4,7 @@ import SeedScene from './objects/Scene.js';
 import { PointerLockControls} from 'three/examples/jsm/controls/PointerLockControls'
 import Stats from 'three/examples/jsm/libs/stats.module';
 
-
+// heavily extended from https://github.com/edwinwebb/three-seed
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera();
 const renderer = new THREE.WebGLRenderer({antialias: true});
