@@ -1,5 +1,6 @@
 import { Group, SpotLight, PointLight, AmbientLight, HemisphereLight, Color } from 'three';
 
+// From boilerplate code https://github.com/edwinwebb/three-seed
 export default class BasicLights extends Group {
   constructor(...args) {
     super(...args);

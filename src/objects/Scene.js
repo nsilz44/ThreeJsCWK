@@ -1,10 +1,8 @@
 import * as THREE from 'three';
 import BasicLights from './Lights.js';
 import Bush from './Bush.js';
-import Tree from './tree.js';
 import Building from './building.js';
 import { degToRad } from 'three/src/math/MathUtils';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Forest from './forest.js';
 import PNG from './images/grass.png'
 import Road from './road.js';
@@ -15,8 +13,10 @@ export default class SeedScene extends THREE.Group {
   constructor() {
     super();
 
+    // add lights same as boilerplate code
     const lights = new BasicLights();
     this.add(lights);
+
     // make ground
     const geometry = new THREE.BoxGeometry( 300, 0.1, 300 );
     const loader = new THREE.TextureLoader();
@@ -27,14 +27,13 @@ export default class SeedScene extends THREE.Group {
       this.add( ground );
     })
     
+
     const road = new Road();
     this.add(road);
 
     const bush1 = new Bush();
     bush1.position.set(50,0,0);
     this.add(bush1);
-
-    
 
     const building1 = new Building();
     building1.position.set(-50,0,-50)

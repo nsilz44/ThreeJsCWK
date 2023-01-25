@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { degToRad } from 'three/src/math/MathUtils';
 import Internal from './internal';
 import Floor from './floor';
 import External from './external';

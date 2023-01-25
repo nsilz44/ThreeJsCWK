@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-
 export default class Bush extends THREE.Group {
     constructor() {
         super();

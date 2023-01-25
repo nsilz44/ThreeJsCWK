@@ -14,11 +14,11 @@ export default class Roof extends THREE.Group {
         roof3.position.set(0,10,0);
         this.add(roof3);
         const roof1 = new THREE.Mesh(geometry36,roofmaterial);
-    roof1.position.set(-5,15.5, 0);
-    roof1.rotateZ(degToRad(45));
-    this.add(roof1);
-    const roof2 = new THREE.Mesh(geometry36,roofmaterial);
-    roof2.position.set(5,15.5, 0);
-    roof2.rotateZ(degToRad(-45));
-    this.add(roof2);})
+        roof1.position.set(-5,15.5, 0);
+        roof1.rotateZ(degToRad(45));
+        this.add(roof1);
+        const roof2 = new THREE.Mesh(geometry36,roofmaterial);
+        roof2.position.set(5,15.5, 0);
+        roof2.rotateZ(degToRad(-45));
+        this.add(roof2);})
         }}

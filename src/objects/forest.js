@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { degToRad } from 'three/src/math/MathUtils';
 import Tree from './tree';
 
 export default class Forest extends THREE.Group {

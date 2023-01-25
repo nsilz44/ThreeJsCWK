@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { degToRad } from 'three/src/math/MathUtils';
 import PNG from './images/floor.png';
 
 export default class Floor extends THREE.Group {

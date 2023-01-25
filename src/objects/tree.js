@@ -7,7 +7,8 @@ export default class Tree extends THREE.Group {
         super();
         const loader = new THREE.TextureLoader();
         loader.load(PNG, texture => {
-        for( let i = 0; i < 3; i++ ) {
+        
+        // Creates the Level of detail changes
         const lod1 = new THREE.LOD();
         const lod2 = new THREE.LOD();
         const lod3 = new THREE.LOD();
@@ -19,9 +20,13 @@ export default class Tree extends THREE.Group {
         const lod9 = new THREE.LOD();
         const lod10 = new THREE.LOD();
         const lod11 = new THREE.LOD();
-    
-        const material = new THREE.MeshBasicMaterial( {map: texture} );
-          const geometry = new THREE.IcosahedronGeometry(4,4-i);
+        for( let i = 0; i < 3; i++ ) {
+        
+    // bush geometry
+    const material = new THREE.MeshBasicMaterial( {map: texture} );
+    const geometry = new THREE.IcosahedronGeometry(4,3-i);
+
+    // middle bush mesh
     const leftbush = new THREE.Mesh( geometry, material );
     const middlebush = new THREE.Mesh (geometry,material);
     const rightbush = new THREE.Mesh (geometry,material);
@@ -121,7 +126,7 @@ export default class Tree extends THREE.Group {
     const bush8 = new THREE.Mesh (bushgeometry,material);
     bush8.position.set(-5,12,-5)
     this.add(bush8)
-    lod1.addLevel( bush1, i *30);
+    lod1.addLevel( bush1, i * 30);
     lod2.addLevel( bush2, i * 30 );
     lod3.addLevel( bush3, i * 30 );
     lod4.addLevel( bush4, i * 30 );
@@ -132,6 +137,8 @@ export default class Tree extends THREE.Group {
     lod9.addLevel( leftbush, i * 60 );
     lod10.addLevel( rightbush, i * 60 );
     lod11.addLevel( middlebush, i * 60 );
+        }
+    
     this.add(lod1)
     this.add(lod2)
     this.add(lod3)
@@ -143,7 +150,6 @@ export default class Tree extends THREE.Group {
     this.add(lod9)
     this.add(lod10)
     this.add(lod11)
-        }
     })
 
     }
